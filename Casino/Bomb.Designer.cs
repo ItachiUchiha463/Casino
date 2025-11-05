@@ -38,6 +38,8 @@
             button5 = new Button();
             button6 = new Button();
             label1 = new Label();
+            label2 = new Label();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             button1.BackColor = Color.Green;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(556, 419);
+            button1.Location = new Point(608, 419);
             button1.Name = "button1";
             button1.Size = new Size(309, 66);
             button1.TabIndex = 0;
@@ -64,7 +66,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(188, 26);
+            pictureBox1.Location = new Point(127, 43);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(383, 351);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -82,6 +84,7 @@
             button2.TabIndex = 4;
             button2.Text = "50";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -93,6 +96,7 @@
             button3.TabIndex = 5;
             button3.Text = "100";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -104,6 +108,7 @@
             button4.TabIndex = 6;
             button4.Text = "250";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -115,6 +120,7 @@
             button5.TabIndex = 7;
             button5.Text = "500";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -126,6 +132,7 @@
             button6.TabIndex = 8;
             button6.Text = "ALL IN";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label1
             // 
@@ -138,6 +145,30 @@
             label1.TabIndex = 15;
             label1.Text = "ОКР";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(796, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 29);
+            label2.TabIndex = 16;
+            label2.Text = "label2";
+            label2.Click += label2_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Blue;
+            button7.FlatStyle = FlatStyle.Popup;
+            button7.Location = new Point(472, 433);
+            button7.Name = "button7";
+            button7.Size = new Size(86, 40);
+            button7.TabIndex = 17;
+            button7.Text = "Очистити";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // Bomb
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -145,15 +176,17 @@
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(929, 497);
+            Controls.Add(button7);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Name = "Bomb";
             Text = "Bomb";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -172,5 +205,7 @@
         private Button button5;
         private Button button6;
         private Label label1;
+        private Label label2;
+        private Button button7;
     }
 }
