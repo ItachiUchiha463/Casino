@@ -66,10 +66,22 @@ namespace Casino
             }
         }
 
-        // Button1: "Зробити ставку"
-        private void button1_Click(object sender, EventArgs e)
+        // Button1: "Зробити ставку" (button1_Click_1)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            if (bet <= 0) { MessageBox.Show("Виберіть ставку!"); return; }
+            if (isRunning) return;
+
+            balance -= bet;
+            UpdateBalance();  // Зберегти + оновити label2
+
+            crashPoint = 1.01 + random.NextDouble() * 98.99; 
+            multiplier = 1.0;
+            isRunning = true;
+            button1.Enabled = false;
+            label3.Visible = true;
+            button8.Visible = true;  // Показати Cash Out (button8 з designer)
+            timer1.Start();  // Timer з designer
         }
 
         private void SaveHistory() => File.WriteAllLines("history.txt", history.Select(h => h.ToString()));
@@ -105,6 +117,7 @@ namespace Casino
             isRunning = false;
             button1.Enabled = true;
             label3.Visible = false;
+            button8.Visible = false;  // Приховати Cash Out
 
             double coef = cashedOut ? multiplier : crashPoint;
             if (cashedOut)
@@ -182,7 +195,7 @@ namespace Casino
 
             if (multiplier >= crashPoint)
             {
-                EndRound(false);  // Краш (без Cash Out)
+                EndRound(false);  // Краш
             }
         }
 
@@ -197,20 +210,16 @@ namespace Casino
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        // Cash Out для button8 (подключи в Designer: Click = CashOut_Click)
+        private void CashOut_Click(object sender, EventArgs e)
         {
-            if (bet <= 0) { MessageBox.Show("Виберіть ставку!"); return; }
-            if (isRunning) return;
+            if (!isRunning) return;
+            EndRound(true);  // Виграш (забрать гроші на поточному множнику)
+        }
 
-            balance -= bet;
-            UpdateBalance();
-
-            crashPoint = 1.01 + random.NextDouble() * 98.99; 
-            multiplier = 1.0;
-            isRunning = true;
-            button1.Enabled = false;
-            label3.Visible = true;
-            timer1.Start();
+        private void button8_Click(object sender, EventArgs e)
+        {
+            CashOut_Click(sender, e);
         }
     }
 }

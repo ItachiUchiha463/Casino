@@ -45,6 +45,7 @@
             listBox1 = new System.Windows.Forms.ListBox();
             textBox2 = new System.Windows.Forms.TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -206,6 +207,16 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // button8
+            // 
+            button8.Location = new System.Drawing.Point(620, 323);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(283, 30);
+            button8.TabIndex = 21;
+            button8.Text = "Забрати";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
             // Bomb
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -213,6 +224,7 @@
             BackColor = System.Drawing.Color.Black;
             BackgroundImage = ((System.Drawing.Image)resources.GetObject("$this.BackgroundImage"));
             ClientSize = new System.Drawing.Size(929, 497);
+            Controls.Add(button8);
             Controls.Add(textBox2);
             Controls.Add(listBox1);
             Controls.Add(label3);
@@ -233,6 +245,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private System.Windows.Forms.Button button8;
 
         private System.Windows.Forms.Timer timer1;
 
