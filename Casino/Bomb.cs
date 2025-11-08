@@ -59,11 +59,6 @@ namespace Casino
         {
             SaveBalance();
             label2.Text = $"{balance:F2}";
-            if (balance <= 0)
-            {
-                MessageBox.Show("Баланс = 0! Гра закінчена.");
-                this.Close();
-            }
         }
 
         // Button1: "Зробити ставку" (button1_Click_1)
@@ -114,8 +109,6 @@ namespace Casino
             timer1.Stop();
             isRunning = false;
             button1.Enabled = true;
-            label3.Visible = false;
-            button8.Visible = false;
 
             double coef = cashedOut ? multiplier : crashPoint;
             if (cashedOut)
