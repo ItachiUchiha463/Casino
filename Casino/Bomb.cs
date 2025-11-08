@@ -24,12 +24,12 @@ namespace Casino
             InitializeComponent();
             pictureBox1.BackColor = Color.Transparent;
 
-            LoadBalance();  // Завантажити/створити balance.txt
+            LoadBalance();
             label2.Text = $"{balance:F2}";
             
             LoadHistory();
             UpdateBalance();
-            refresh_bet();  // Початково 0
+            refresh_bet();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -73,15 +73,13 @@ namespace Casino
             if (isRunning) return;
 
             balance -= bet;
-            UpdateBalance();  // Зберегти + оновити label2
+            UpdateBalance();
 
-            crashPoint = 1.01 + random.NextDouble() * 98.99; 
+            crashPoint = 1.01 + random.NextDouble() * 9.99; 
             multiplier = 1.0;
             isRunning = true;
             button1.Enabled = false;
-            label3.Visible = true;
-            button8.Visible = true;  // Показати Cash Out (button8 з designer)
-            timer1.Start();  // Timer з designer
+            timer1.Start();
         }
 
         private void SaveHistory() => File.WriteAllLines("history.txt", history.Select(h => h.ToString()));
@@ -117,7 +115,7 @@ namespace Casino
             isRunning = false;
             button1.Enabled = true;
             label3.Visible = false;
-            button8.Visible = false;  // Приховати Cash Out
+            button8.Visible = false;
 
             double coef = cashedOut ? multiplier : crashPoint;
             if (cashedOut)
@@ -186,8 +184,7 @@ namespace Casino
             bet = 0;
             refresh_bet();
         }
-
-        // Timer: Ріст множника + краш
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             multiplier += 0.1;
@@ -195,7 +192,7 @@ namespace Casino
 
             if (multiplier >= crashPoint)
             {
-                EndRound(false);  // Краш
+                EndRound(false);
             }
         }
 
@@ -209,12 +206,11 @@ namespace Casino
                 SaveBalance();
             }
         }
-
-        // Cash Out для button8 (подключи в Designer: Click = CashOut_Click)
+        
         private void CashOut_Click(object sender, EventArgs e)
         {
             if (!isRunning) return;
-            EndRound(true);  // Виграш (забрать гроші на поточному множнику)
+            EndRound(true);
         }
 
         private void button8_Click(object sender, EventArgs e)
