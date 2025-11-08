@@ -19,3 +19,9 @@ C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\refint\Casino.dll
 C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\Casino.pdb
 C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\Casino.genruntimeconfig.cache
 C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\ref\Casino.dll
+C:\OKR\LW2\Casino\Casino\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\OKR\LW2\Casino\Casino\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\OKR\LW2\Casino\Casino\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\OKR\LW2\Casino\Casino\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\Casino.csproj.AssemblyReference.cache
+C:\OKR\LW2\Casino\Casino\obj\Debug\net8.0-windows\Casino.csproj.Up2Date
