@@ -40,6 +40,9 @@
             label1 = new Label();
             label2 = new Label();
             button7 = new Button();
+            label3 = new Label();
+            listBox1 = new ListBox();
+            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             // 
             textBox1.Location = new Point(86, 400);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(314, 27);
+            textBox1.Size = new Size(314, 23);
             textBox1.TabIndex = 2;
             // 
             // pictureBox1
@@ -141,7 +144,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(164, 76);
+            label1.Size = new Size(134, 61);
             label1.TabIndex = 15;
             label1.Text = "ОКР";
             // 
@@ -152,7 +155,7 @@
             label2.ForeColor = SystemColors.ButtonFace;
             label2.Location = new Point(796, 9);
             label2.Name = "label2";
-            label2.Size = new Size(96, 29);
+            label2.Size = new Size(81, 23);
             label2.TabIndex = 16;
             label2.Text = "label2";
             label2.Click += label2_Click;
@@ -169,13 +172,42 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(233, 186);
+            label3.Name = "label3";
+            label3.Size = new Size(166, 43);
+            label3.TabIndex = 18;
+            label3.Text = "label3";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(620, 59);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(284, 169);
+            listBox1.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(620, 390);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(284, 23);
+            textBox2.TabIndex = 20;
+            // 
             // Bomb
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(929, 497);
+            Controls.Add(textBox2);
+            Controls.Add(listBox1);
+            Controls.Add(label3);
             Controls.Add(button7);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -187,12 +219,15 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Bomb";
             Text = "Bomb";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private System.Windows.Forms.Label label3;
 
         #endregion
 
@@ -207,5 +242,7 @@
         private Label label1;
         private Label label2;
         private Button button7;
+        private ListBox listBox1;
+        private TextBox textBox2;
     }
 }

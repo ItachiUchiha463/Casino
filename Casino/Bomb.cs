@@ -12,7 +12,11 @@ namespace Casino
 {
     public partial class Bomb : Form
     {
-        int balance, bet = 0;
+        int balance, bet;
+        double multiplier = 1.0, crashPoint;
+        bool isRunning = false;
+        Random random = new Random();
+        List<double> history = new List<double>(4);
         public Bomb()
         {
             InitializeComponent();
@@ -20,6 +24,9 @@ namespace Casino
 
             balance = int.Parse(File.ReadAllText("balance.txt"));
             label2.Text = $"{balance:F2}";
+
+            //LoadHistory();
+            //SetupTimer();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -43,7 +50,7 @@ namespace Casino
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            textBox2.Text = textBox1.Text;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -71,7 +78,7 @@ namespace Casino
         {
             if (CheckLegitOfBet(200))
                 return;
-            bet += 200;
+            bet += 250;
             refresh_bet();
         }
 
