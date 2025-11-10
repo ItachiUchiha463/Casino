@@ -18,7 +18,7 @@ namespace Casino
         bool isRunning = false;
         Random random = new Random();
         List<double> history = new List<double>(4);
-        
+
         public Bomb()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Casino
 
             LoadBalance();
             label2.Text = $"{balance:F2}";
-            
+
             LoadHistory();
             UpdateBalance();
             refresh_bet();
@@ -70,7 +70,7 @@ namespace Casino
             balance -= bet;
             UpdateBalance();
 
-            crashPoint = 1.01 + random.NextDouble() * 9.99; 
+            crashPoint = 1.01 + random.NextDouble() * 9.99;
             multiplier = 1.0;
             isRunning = true;
             button1.Enabled = false;
@@ -177,7 +177,7 @@ namespace Casino
             bet = 0;
             refresh_bet();
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             multiplier += 0.1;
@@ -199,7 +199,7 @@ namespace Casino
                 SaveBalance();
             }
         }
-        
+
         private void CashOut_Click(object sender, EventArgs e)
         {
             if (!isRunning) return;
@@ -209,6 +209,17 @@ namespace Casino
         private void button8_Click(object sender, EventArgs e)
         {
             CashOut_Click(sender, e);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form1 form1Form = new Form1();
+
+            // Показуємо її
+            form1Form.Show();
+
+            // (необов’язково) ховаємо головну форму Casino
+            this.Close();
         }
     }
 }

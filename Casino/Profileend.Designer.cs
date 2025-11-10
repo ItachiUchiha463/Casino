@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profileend));
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
             label2 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -59,17 +59,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.DimGray;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Location = new Point(36, 140);
-            button2.Name = "button2";
-            button2.Size = new Size(230, 29);
-            button2.TabIndex = 2;
-            button2.Text = "Задонатити";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -80,14 +69,26 @@
             label2.TabIndex = 3;
             label2.Text = "label2";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.DimGray;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Location = new Point(36, 143);
+            button2.Name = "button2";
+            button2.Size = new Size(230, 29);
+            button2.TabIndex = 4;
+            button2.Text = "Повернутись назад";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Profileend
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
             Controls.Add(button2);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Profileend";
@@ -100,7 +101,7 @@
 
         private Label label1;
         private Button button1;
-        private Button button2;
         private Label label2;
+        private Button button2;
     }
 }
