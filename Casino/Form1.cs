@@ -37,5 +37,12 @@ namespace Casino
             // (необов’язково) ховаємо головну форму Casino
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Profileend profileendForm = new Profileend();
+            profileendForm.Show();
+            this.Hide();
+        }
     }
 }

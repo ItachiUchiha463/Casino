@@ -32,6 +32,7 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -56,6 +57,7 @@
             button1.TabIndex = 1;
             button1.Text = "Взяти кредит!!!!";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -68,12 +70,23 @@
             button2.Text = "Задонатити";
             button2.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(676, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 29);
+            label2.TabIndex = 3;
+            label2.Text = "label2";
+            // 
             // Profileend
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -88,5 +101,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private Label label2;
     }
 }
